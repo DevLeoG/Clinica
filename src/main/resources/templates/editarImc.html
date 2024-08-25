@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar IMC</title>
+    <link rel="stylesheet" href="/css/cadConsulta.css">
+</head>
+<br>
+<div class="container">
+    <h2>Calculadora de IMC</h2>
+    <form id="imcForm" th:action="@{/imc/{id}/editar(id=${imc.id})}" method="post">
+        <select id="paciente" name="paciente" required>
+            <option value="">Escolha um paciente</option>
+            <option th:each="paciente : ${pacientes}" th:value="${paciente.id}" th:text="${paciente.nome}" th:selected="${paciente.id == imc.paciente.id}"></option>
+        </select>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" th:value="${imc.peso}" required>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" name="altura" step="0.01" th:value="${imc.altura}" required><br><br>
+
+        <button type="submit">Calcular IMC</button>
+    </form>
+
+</div>
+
+</body>
+</html>

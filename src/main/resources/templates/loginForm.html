@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+</head>
+<body>
+    <div class="page">
+        <form method="post" action="/login" class="formLogin">
+            <h1><i>Entrar</i></h1>
+
+            <label for="login"><strong>Login</strong></label>
+            <input type="email" name="login" id="login" placeholder="Digite seu login" required />
+            <label for="senha"><strong>Senha</strong></label>
+            <input id="senha" name="senha" type="password" placeholder="Digite sua senha" required />
+
+            <p th:if="${error}" class="error-message" th:text="${error}"></p>
+
+            <a href="/recupsenh">Esqueci minha senha</a>
+
+            <input type="submit" value="Acessar" class="btn"/>
+
+
+            <br>
+            <a href="/cadastro">Cadastre-se </a>
+
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Médicos</title>
+    <link rel="stylesheet" href="/css/cadAgenda.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+    <h1>Lista de Médicos</h1>
+    <a href="/medico/novo"><input type="submit" value="Novo" class="btn"/></a>
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="medico : ${medico}">
+            <td th:text="${medico.id}"></td>
+            <td th:text="${medico.nome}"></td>
+            <td>
+                <a th:href="@{/medico/{id}/editar(id=${medico.id})}">Editar</a>
+                <a th:href="@{/medico/{id}/excluir(id=${medico.id})}">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

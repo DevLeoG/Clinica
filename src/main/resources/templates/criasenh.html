@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de senha</title>
+    <link rel="stylesheet" href="/css/recupsen.css">
+    <!--<script type="text/javascript" src="cod.js"></script>-->
+</head>
+<body>
+    <div class="page">
+          <form method="post" th:value="${param.login}" class="formLogin">
+            <h1>Criar nova senha</h1>
+          
+             <label for="senha">Nova senha</label>
+            <input type="password"  id="senha" name="senha" placeholder="Digite sua senha" required>
+            <label for="senha">Confirmar senha</label>
+            <input type="password" id="senha1" name="senha1" placeholder="Digite sua senha" required>
+
+              <p th:if="${error}" class="error-message" th:text="${error}"></p>
+            
+            <input type="submit" value="Acessar" class="btn" />
+          </form>
+    </div>
+    
+</body>
+</html>

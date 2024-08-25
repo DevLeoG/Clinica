@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>IMC</title>
+    <link rel="stylesheet" href="/css/consultas.css">
+</head>
+<body>
+<div class="container">
+<h1>Lista de Imc's</h1>
+<a href="/imc/novo"><input type="submit" value="Novo" class="btn"/></a>
+    <a href="/home"><input type="submit" value="Home" class="btn"/></a>
+    <table class="table table-bordered">
+    <tr>
+        <th>Paciente</th>
+        <th>Peso</th>
+        <th>Altura</th>
+        <th>Resultado</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="imc : ${imc}">
+        <td th:text="${imc.paciente.nome}"></td>
+        <td th:text="${imc.peso}"></td>
+        <td th:text="${imc.altura}"></td>
+        <td th:text="${imc.resultado}" ></td>
+        <td th:text="${imc.getImcStatus}"></td>
+        <td>
+            <div class="but">
+            <a th:href="@{/imc/{id}/editar(id=${imc.id})}" class="btn">Editar</a>
+            <a th:href="@{/imc/{id}/excluir(id=${imc.id})}" class="btn">Excluir</a>
+            </div>
+        </td>
+    </tr>
+
+
+</table>
+
+    <!--
+  <h2>Tabela de Classificação de IMC </h2>
+   <img src="https://superafarma.com.br/wp-content/uploads/2022/12/Supera-Farma-Tabela-IMC-Classificacao.png" alt="Tabela de Classificação de IMC">
+     -->
+</div>
+<br>
+</body>
+</html>

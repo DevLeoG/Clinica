@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pacientes</title>
+    <link rel="stylesheet" href="/css/cadConsulta.css">
+</head>
+<body>
+    
+    <div class="container">
+    <h2>Adicionar Paciente</h2>
+    <form id="addForm" action="/pacientes/novo" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="documento">Documento:</label>
+        <input type="text" id="documento" name="cpf" required>
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNasc" required>
+
+        <button type="submit">Adicionar Paciente</button>
+    </form>
+</div>
+
+</body>
+</html>

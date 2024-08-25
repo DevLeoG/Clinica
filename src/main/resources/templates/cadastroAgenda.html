@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/cadAgenda.css">
+    <script type="text/javascript" src="cod.js"></script>
+    <style>
+        .alert {
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .alert-error {
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+         <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        <form method="post" action="/agendamento/novo" class="formLogin" >
+            <h1><i>Agendamento</i></h1>
+
+            <label for="nomePaciente">Nome do Paciente</label>
+            <input type="text" id="nomePaciente" name="nomePaciente"  placeholder="Digite o nome do paciente" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"  placeholder="Digite seu email" required />
+
+            <label for="dataHoraAgendamento" class="form_label">Data do agendamento</label>
+            <input type="datetime-local" id="dataHoraAgendamento" name="dataHoraAgendamento"  placeholder="Data do agendamento" required />
+
+            <label for="clinica">Escolha uma clínica</label>
+            <select id="clinica" name="clinica" >
+                <option value="">Escolha uma clínica</option>
+                <option value="Santa Clara">Santa Clara</option>
+                <option value="Clinica Sim">Clinica Sim</option>
+                <option value="Clinica Amor e Saúde">Clinica Amor e Saúde</option>
+            </select>
+
+            <label for="medico">Escolha um médico</label>
+            <select id="medico" name="medico" >
+                <option value="">Escolha um médico</option>
+                <option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.nome}"></option>
+            </select>
+
+            <p>Ver lista de agendamentos? <a href="/agendamento/lista">Clique aqui</a></p>
+            <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+
+           
+            <input type="submit" value="Acessar" class="btn" />
+           </form>
+    </div>
+    
+</body>
+</html>

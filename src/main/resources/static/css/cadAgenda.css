@@ -1,0 +1,97 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1e90ff;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius:7px;
+    padding: 55px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 1);
+    gap: 5px;
+    width: 30%;
+}
+
+.formLogin h1 {
+    padding: 7;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.0em;
+    line-height: 1.0em;
+    color: #1e90ff;
+}
+
+
+.formLogin input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 40px;
+    transition: all linear 160ms;
+    outline: none;
+    color: #1e90ff;
+}
+
+
+.formLogin input:focus {
+    border: 1px solid #1e90ff;
+}
+
+.formLogin label {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.btn {
+    background-color: #fff;
+    color: #1e90ff;
+    font-size: 14px;
+    font-weight: 300;
+    border: 100 !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+    text-align: center;
+    height: 7vh;
+
+
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    color: #fff;
+    font-weight: 700;
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+
+}
+.formLogin Select{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 40px;
+    transition: all linear 160ms;
+    outline: none;
+    color: #1e90ff;
+}
+
+}

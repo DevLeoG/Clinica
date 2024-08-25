@@ -1,0 +1,38 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1e90ff;
+}
+h1 {
+    padding: 10;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2.0em;
+    line-height: 1.0em;
+    color: #1e90ff;
+}
+.container{
+    padding: 5%;
+    margin: 0;
+    color: #1e90ff;
+    display: flex;
+    justify-content: center;
+}
+/* .btn {
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    border: 100 !important;
+    transition: all linear 160ms;
+    cursor: pointer;
+    margin: 0 !important;
+    text-align: center;
+    height: 7vh;
+    border-radius: 30px 30px;
+
+
+}
+*/

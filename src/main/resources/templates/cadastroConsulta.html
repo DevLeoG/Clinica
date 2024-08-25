@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadstro de Consultas</title>
+    <link rel="stylesheet" href="/css/cadConsulta.css">
+</head>
+<body>
+<div class="container">
+    <h2>Adicionar Consulta</h2>
+    <form id="addForm" method="post" action="/consultas/novo">
+        <label for="paciente">Paciente:</label>
+        <select id="paciente" name="paciente" required>
+            <option value="">Escolha um paciente</option>
+            <option th:each="paciente : ${pacientes}" th:value="${paciente.id}" th:text="${paciente.nome}"></option>
+        </select>
+        <label for="queixa">Queixa Principal:</label>
+        <input type="text" id="queixa" name="queixa" required>
+        <select id="medico" name="medico" required>
+            <option value="">Escolha um medico</option>
+            <option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.nome}"></option>
+        </select>
+        <label for="diagnostico">Diagnóstico:</label>
+        <input type="text" id="diagnostico" name="diagnostico" required>
+
+        <button type="submit">Adicionar Consulta</button>
+    </form>
+</div>
+</body>
+</html>

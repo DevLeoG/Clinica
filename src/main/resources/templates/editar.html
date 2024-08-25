@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/cad.css">
+</head>
+<body>
+<div class="page">
+    <form method="post" th:action="@{/usuarios/{id}/editar(id=${user.id})}" class="formLogin">
+        <h1><i>Editar</i></h1>
+        <label for="login">Login</label>
+        <input  type="email"  id="login" name="login"  th:value="${user.login}" required />
+        <label for="nome">Nome</label>
+        <input type="text"  id="nome" name="nome" th:value="${user.name}" required />
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" th:value="${user.senha}" required />
+        <label for="datanasc" class="form_label">Data de Nascimento</label>
+        <input type="date" name="datanasc" class="form_input" id="datanasc" th:value="${user.datanasc}" required>
+
+        <label for="ativo">Ativo</label>
+        <input type="checkbox" id="ativo" name="ativo" th:checked="${user.ativo}" />
+
+
+
+        <input type="submit" value="Acessar" class="btn" />
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/css/consultas.css">
+<body>
+
+<div class="container">
+<h2>Lista de Consultas</h2>
+<a href="/consultas/novo"><input type="submit" value="Novo" class="btn"/></a>
+    <a href="/home"><input type="submit" value="Home" class="btn"/></a>
+    <table id="consultas">
+    <thead>
+    <tr>
+        <th>Paciente</th>
+        <th>Queixa Principal</th>
+        <th>Médico</th>
+        <th>Diagnóstico</th>
+        <th>Ações</th>
+    </tr>
+    <tr th:each="consulta : ${consulta}">
+        <td th:text="${consulta.paciente.nome}"></td>
+        <td th:text="${consulta.queixa}"></td>
+        <td th:text="${consulta.medico.nome}"></td>
+        <td th:text="${consulta.diagnostico}"></td>
+        <td>
+            <div class="but">
+            <a th:href="@{/consultas/{id}/editar(id=${consulta.id})}" class="btn">Editar</a>
+            <a th:href="@{/consultas/{id}/excluir(id=${consulta.id})}" class="btn">Excluir</a>
+            </div>
+        </td>
+    </thead>
+</table>
+</div>
+</body>
+</html>

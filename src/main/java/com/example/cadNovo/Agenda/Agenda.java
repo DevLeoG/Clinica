@@ -1,16 +1,21 @@
 package com.example.cadNovo.Agenda;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import com.example.cadNovo.Medico.Medico;
-import com.example.cadNovo.User.User;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity (name = "agenda")
 @Table(name = "agenda")
@@ -43,4 +48,5 @@ public class Agenda {
     }
 
 
+    
 }

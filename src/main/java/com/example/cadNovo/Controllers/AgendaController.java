@@ -1,20 +1,23 @@
 package com.example.cadNovo.Controllers;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.example.cadNovo.Agenda.Agenda;
 import com.example.cadNovo.Agenda.AgendaRepository;
 import com.example.cadNovo.Medico.Medico;
 import com.example.cadNovo.Medico.MedicoRepository;
-import com.example.cadNovo.User.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("agendamento")
@@ -56,17 +59,9 @@ public class AgendaController {
 
         for(int i = 0; i< agenda.size();i++){
 
-            if(agenda.get(i).getClinica().equals(clinica)) {
+            if(agenda.get(i).getClinica().equals(clinica) && agenda.get(i).getDataHoraAgendamento().equals(dataHoraAgendamento) && agenda.get(i).getMedico().equals(medico1) ) {
                 igual = true;
-                redirectAttributes.addFlashAttribute("error", "Ja possui agendamento marcado para essa clinica");
-                return "redirect:/agendamento/novo";
-            }if(agenda.get(i).getDataHoraAgendamento().equals(dataHoraAgendamento)) {
-                igual = true;
-                redirectAttributes.addFlashAttribute("error", "Ja possui agendamento marcado para esse horario");
-                return "redirect:/agendamento/novo";
-            }if(agenda.get(i).getMedico().equals(medico1)) {
-                igual = true;
-                redirectAttributes.addFlashAttribute("error", "Ja possui agendamento marcado para esse medico");
+                redirectAttributes.addFlashAttribute("error", "Ja possui agendamento marcado para essa clinica, data e medico ");
                 return "redirect:/agendamento/novo";
             }
         }
